@@ -1,23 +1,20 @@
-var angka;
-var kesempatan;
-var tebakan;
+var chance = 3;
+alert('tebak angka 1-3' + '\n kamu punya ' + chance + ' kesempatan');
+chance--
+while (chance >= 0 ) {
+    var user = prompt('masukan angka tebakan');
+    var compt = Math.floor(Math.random()*11);
 
-angka=Math.random();
-tebakan=prompt("Masukan tebakan anda dari angka 1-3 (kesempatan = 3 kali)");
-
-if(angka>=0,1 && angka <0 .25="" angka="" else="" if="">=0,25 && angka <0 .5="" angka="" else="" if="">=0,5 && angka <0 .75="" angka="4;" else="" for="" kesempatan="3;kesempatan">=1;kesempatan--)
-{
-    if(angka==tebakan)
-    {
-        document.getElementById('notice').innerHTML="Selamat Anda Berhasil";
+    if (user == compt) {
+        alert('TEBAKAN ANDA BENAR'+'\n ANGKA YANG DICARI ' + compt);
         break;
-    }
-    else
-    {
-        tebakan=prompt("Maaf tebakan salah, sisa kesempatan = "+kesempatan)
-    }
+    } else if (chance == 0) {
+        alert('kesempatan anda telah habis ');
+        break;
+    }else if (user > compt ) {
+        alert('TEBAKAN ANDA TERLALU TINGGI' + '\n kamu punya ' + chance + ' kesempatan' );
+    } else if (user < compt) {
+        alert('TEBAKAN ANDA TERLALU RENDAH' + '\n kamu punya ' + chance + ' kesempatan');
+chance--
 }
-if(kesempatan==0)
-{
-    document.getElementById('notice').innerHTML="Game Over";
 }
